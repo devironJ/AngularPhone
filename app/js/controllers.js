@@ -2,11 +2,16 @@
 
 /* Controllers */
 
-var phonecatApp = angular.module('phonecatApp', []);
+var phonecatControllers = angular.module('phonecatControllers', []);
 
-phonecatApp.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
-  $http.get('phones/phones.json').success(function(data) {
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
+
+    //returns a promise object with a success
+    $http.get('phones/phones.json').success(function(data) {
     $scope.phones = data;
+
+    ////limits to 5 pieces of data
+    //$scope.phones = data.splice(0, 5);
 
       ////previous example phones
       //$scope.phones = [
@@ -23,4 +28,8 @@ phonecatApp.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $ht
   });
 
   $scope.orderProp = 'age';
+}]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+    $scope.phoneId = $routeParams.phoneId;
 }]);
