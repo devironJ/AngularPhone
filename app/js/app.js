@@ -4,7 +4,7 @@
  */
 
 
-var phonecatApp = angular.module("phonecatApp",['ngRoute','phonecatControllers']);
+var phonecatApp = angular.module("phonecatApp",['ngRoute','phonecatControllers','phonecatFilters']);
 
 //***Routers can only be injected into config functions ***
 //$routeprovider is the argument for angular route

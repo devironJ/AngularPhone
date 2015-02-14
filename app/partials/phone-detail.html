@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head lang="en">
-    <!--*****DOES NOT NEED CONTROLLERS.JS OR APP.JS REFERENCE, INDEX.HTML REFERENCE TAKES CARE OF IT?-->
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="bower_components/angular/angular.js"></script>
-    <!--references the angular route js file after bower installation-->
-    <script src="bower_components/angular-route/angular-route.js"></script>
-</head>
-<body>
-    TBD: detail view for <span>{{phoneId}}</span>
-</body>
-</html>
+<img ng-src="{{phone.images[0]}}" class="phone">
+
+<h1>{{phone.name}}</h1>
+
+<p>{{phone.description}}</p>
+
+<dl class="phone-thumbs">
+    <!--do the repeat on the images portion of the phone object, pull from there-->
+    <dt ng-repeat="img in phone.images">
+        <img ng-src="{{img}}">
+    </dt>
+</dl>
+
+<dl class="specs">
+    <span>Availability and Networks</span>
+    <dt ng-repeat="availability in phone.availability"> {{availability}}</dt><br>
+    <span>Additional Features</span>
+    <dt>{{phone.additionalFeatures}}</dt><br>
+    <dt>Infrared: {{phone.connectivity.infrared | checkmark}} </dt><br>
+    <dt>GPS: {{phone.connectivity.gps | checkmark}} </dt>
+</dl>

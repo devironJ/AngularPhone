@@ -30,6 +30,10 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', function($sc
   $scope.orderProp = 'age';
 }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-    $scope.phoneId = $routeParams.phoneId;
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams,$http) {
+    //phoneId is what the JSON's name is, therefore references the JSON
+    //$routeParams is the variable used with angular-route
+    $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data){
+        $scope.phone = data;
+    });
 }]);
