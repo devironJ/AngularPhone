@@ -13,13 +13,13 @@
     <div class="col-md-10">
 
         <!--Content body, with phone thumbs and links-->
-        <ul class="phones">
-            <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-                <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-                <a href="#/phones/{{phone.id}}">{{phone.name}}></a>
+        <dl class="phones">
+            <dd ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+                <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a><br>
+                <a href="#/phones/{{phone.id}}"><strong>{{phone.name}}</strong></a>
                 <p>{{phone.snippet}}</p>
-            </li>
-        </ul>
+            </dd>
+        </dl>
     </div>
     </div>
     </div>
