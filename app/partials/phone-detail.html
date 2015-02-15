@@ -1,4 +1,6 @@
-<img ng-src="{{phone.images[0]}}" class="phone">
+<!--sets the large image to the variable in the controller-->
+
+<img ng-src="{{mainImageUrl}}" class="phone">
 
 <h1>{{phone.name}}</h1>
 
@@ -7,7 +9,8 @@
 <dl class="phone-thumbs">
     <!--do the repeat on the images portion of the phone object, pull from there-->
     <dt ng-repeat="img in phone.images">
-        <img ng-src="{{img}}">
+        <!--passes the src for the image you selected into the function that displays the large image-->
+        <img ng-src="{{img}}" ng-click="setImage(img)">
     </dt>
 </dl>
 

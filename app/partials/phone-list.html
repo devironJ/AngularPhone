@@ -1,8 +1,8 @@
 <body ng-controller="PhoneListCtrl">
     <div class="container-fluid">
     <div class="row">
-    <div class="col-md-2">
-        Search: <input ng-model="query">
+    <div class="col-md-3">
+        Search: <input ng-model="query"><br>
         Sort by:
         <select ng-model="orderProp">
             <option value="name">Alphabetical</option>
@@ -10,7 +10,7 @@
             <option value="-age">Oldest</option>
         </select>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
 
         <!--Content body, with phone thumbs and links-->
         <dl class="phones">
